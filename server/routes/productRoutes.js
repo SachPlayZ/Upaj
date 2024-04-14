@@ -11,6 +11,18 @@ router.use(cors({
     credentials: true
     }));
 
+    router.get('/products/:productId', async (req, res) => {
+        try {
+            const productId = req.params.productId;
+            const product = await Product.findById(productId);
+            if (!product) {
+                return res.status(404).json({ message: 'Product not found' });
+            }
+            res.status(200).json(product);
+        } catch (error) {
+            res.status(500).json({ message: 'Failed to fetch product', error: error.message });
+        }
+    });
 // Route for fetching all products
 router.get('/products', async (req, res) => {
     try {

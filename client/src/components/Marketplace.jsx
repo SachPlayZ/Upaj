@@ -25,13 +25,14 @@ const Marketplace = () => {
         <div className='bg-black flex flex-col justify-center items-center'>
             <h1 className='font-hindi text-white text-7xl my-12'>Marketplace</h1>
             <div className='flex justify-center items-center gap-6 mb-12'>
-                <ul className='grid grid-cols-1 md:grid-cols-3 gap-6 mx-12'>
+                <ul className='grid grid-cols-1 md:grid-cols-3 gap-12 mx-12'>
                     {products.slice(0, 3).map(product => (
                         <li key={product._id} className='bg-white rounded-lg p-4'>
                             <img className=' h-80 w-80 object-cover rounded' src={getImageUrl(product.imageUrl)} alt={product.name} />
                             <h2 className='text-black text-xl font-semibold my-2'>{product.name}</h2>
-                            <p className='text-gray-600'>{product.description}</p>
-                            <button className='bg-lime-500 hover:bg-lime-700 text-white font-bold py-2 px-4 rounded mt-4'>Buy Now</button>
+                            <p className='text-gray-800 text-lg mb-6'>₹ {product.price}</p>
+                            <Link to={`/product/${product._id}`} className='bg-lime-500 hover:bg-lime-700 text-white font-bold py-2 px-4 mt-12 rounded'>Buy Now</Link>
+
                         </li>
                     ))}
                 </ul>

@@ -10,6 +10,8 @@ import { Toaster } from 'react-hot-toast'
 import { UserContextProvider } from '../context/userContext'
 import MarketplaceDetails from './components/MarketplaceDetails'
 import SellerPage from './components/SellerPage'  
+import ProductView from './components/ProductView'
+import About from './components/About'
 
 axios.defaults.baseURL = 'http://localhost:8000'
 axios.defaults.withCredentials = true
@@ -27,6 +29,8 @@ function App() {
         <Route path="/signup" element={<RegisterPage />} />
         <Route path="/marketplace" element={<MarketplaceDetails />} />
         <Route path="/seller" element={<SellerPage />} />
+        <Route path="/product/:productId" element={<ProductView />} />
+        <Route path="/about" element={<About />} />
 
       </Routes>
     </UserContextProvider>
