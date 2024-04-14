@@ -11,8 +11,8 @@ import { UserContextProvider } from '../context/userContext'
 import MarketplaceDetails from './components/MarketplaceDetails'
 import SellerPage from './components/SellerPage'  
 
-axios.defaults.baseURL = 'http://localhost:8000'
-axios.defaults.withCredentials = true
+axios.defaults.baseURL = 'https://web-craft-r2-backend.vercel.app';
+axios.defaults.withCredentials = true;
 
 function App() {
   return (

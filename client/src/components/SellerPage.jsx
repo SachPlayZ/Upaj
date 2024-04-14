@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-
 const SellerPage = () => {
   const navigate = useNavigate();
   const [name, setName] = useState('');
@@ -15,33 +14,26 @@ const SellerPage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     
-    // Create form data object
     const formData = new FormData();
     formData.append('name', name);
     formData.append('price', price);
     formData.append('category', category);
     formData.append('quantity', quantity);
-    formData.append('image', image); // Append image file
+    formData.append('image', image);
 
     try {
-      // Make a POST request to the backend API endpoint
-      const response = await axios.post('/api/products', formData, {
+      const response = await axios.post('https://web-craft-r2-backend.vercel.app/api/products', formData, {
         headers: {
-          'Content-Type': 'multipart/form-data' // Set content type to multipart form data
+          'Content-Type': 'multipart/form-data'
         }
       });
 
-      // Handle success response
       console.log(response.data);
-      navigate('/marketplace')
-      // Optionally, you can handle success messages or redirect the user to another page
+      navigate('/marketplace');
     } catch (error) {
-      // Handle error response
       console.error(error);
-      // Optionally, you can display an error message to the user
     }
 
-    // Clear the form fields
     setName('');
     setPrice('');
     setCategory('');
