@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Samarkan';
+  src: url('/fonts/samarkan.TTF') format('truetype');
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
