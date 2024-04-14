@@ -1,14 +1,7 @@
-const express = require('express');
-const router = express.Router();
 const User = require('../models/User');
 const { hashPassword, comparePassword } = require('../helpers/auth');
 const jwt = require('jsonwebtoken');
-const cors = require('cors');
 
-router.use(cors({
-    origin: 'https://web-craft-r2-blush.vercel.app/',
-    credentials: true
-}));
 
 const registerUser = async (req, res) => {
     try {
@@ -38,8 +31,8 @@ const registerUser = async (req, res) => {
       console.log(error);
       return res.status(500).json({ success: false, error: 'An error occurred while registering the user' });
     }
-};
-
+  };
+  
 const loginUser = async (req, res) => {
     try {
       const { email, password } = req.body;
@@ -55,36 +48,37 @@ const loginUser = async (req, res) => {
         return res.json({ success: false, error: 'Invalid credentials' });
       }
       if (match) {
-        jwt.sign({email: user.email, id: user._id, fullname: user.fullname}, process.env.JWT_SECRET, {}, (err, token) => {
-          if (err) throw err;
-          res.cookie('token', token).json({ success: true, token, user });
-        });
+        
+          jwt.sign({email: user.email, id: user._id, fullname: user.fullname}, process.env.JWT_SECRET, {}, (err, token) => {
+              if (err) throw err;
+              res.cookie('token', token).json({ success: true, token, user });
+      });
       }
     } catch (error) {
       console.log(error);
       return res.status(500).json({ success: false, error: 'An error occurred while logging in' });
     }
-};
-
-const getProfile = async (req, res) => {
+  };
+  
+  const getProfile = async (req, res) => {
     const {token} = req.cookies;
     if (token) {
         jwt.verify(token, process.env.JWT_SECRET, {} , (err, user) => {
             if (err) throw err;
-            res.json(user);
-        });
-    } else {
-        res.json(null);
+            res.json(user)
+
+    });
+  } else {
+     res.json(null)
+  }
     }
-};
 
 const test = (req, res) => {
-    res.json('test works');
-};
-
-router.get('/', test);
-router.post('/signup', registerUser);
-router.post('/login', loginUser);
-router.get('/profile', getProfile);
-
-module.exports = router;
+    res.json('test works')
+}
+module.exports = {
+    test,
+    registerUser,
+    loginUser,
+    getProfile
+}

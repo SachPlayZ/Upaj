@@ -9,7 +9,7 @@ const MarketplaceDetails = () => {
     // Fetch products from backend API
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('https://web-craft-r2-backend.vercel.app/api/products');
+        const response = await axios.get('/api/products');
         setProducts(response.data);
       } catch (error) {
         setError(error.message);
@@ -18,9 +18,8 @@ const MarketplaceDetails = () => {
 
     fetchProducts();
   }, []);
-
   const getImageUrl = (imageUrl) => {
-    return `https://web-craft-r2-backend.vercel.app/${imageUrl}`;
+    return `http://localhost:8000/${imageUrl}`;
   };
 
   return (

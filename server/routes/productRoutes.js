@@ -1,3 +1,5 @@
+// productRoutes.js
+
 const express = require('express');
 const router = express.Router();
 const Product = require('../models/product');
@@ -5,9 +7,9 @@ const multer = require('multer');
 const cors = require('cors');
 
 router.use(cors({
-    origin: 'https://web-craft-r2-blush.vercel.app/',
+    origin: 'http://localhost:5173',
     credentials: true
-}));
+    }));
 
 // Route for fetching all products
 router.get('/products', async (req, res) => {
