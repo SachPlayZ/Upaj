@@ -1,8 +1,6 @@
-
-https://github.com/SachPlayZ/WebCraftR2/assets/45076467/784381b0-d1ff-4f7c-9bca-85c9f2f77e57
 # UPAJ
 
-
+https://github.com/SachPlayZ/WebCraftR2/assets/45076467/784381b0-d1ff-4f7c-9bca-85c9f2f77e57
 
 ## How to start :
 ### Create .env in /server
@@ -14,3 +12,5 @@ MONGO_URI = Your_Mongo_URI
 ### > npm start
 
 ## Wallah! You're good to go.
+
+
