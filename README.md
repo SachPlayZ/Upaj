@@ -13,4 +13,6 @@ MONGO_URI = Your_Mongo_URI
 
 ## Wallah! You're good to go.
 
+Frontend deployed at - https://upaj.vercel.app/
+
 
