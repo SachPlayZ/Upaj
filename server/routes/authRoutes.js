@@ -4,7 +4,7 @@ const cors = require('cors');
 const { test, registerUser, loginUser, getProfile } = require('../controllers/authControllers');
 
 router.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'http://upaj.vercel.app',
     credentials: true
     }));
 router.get('/', test);

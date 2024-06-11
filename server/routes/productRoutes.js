@@ -7,7 +7,7 @@ const multer = require('multer');
 const cors = require('cors');
 
 router.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'http://upaj.vercel.app',
     credentials: true
     }));
 
