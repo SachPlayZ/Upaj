@@ -13,7 +13,7 @@ import SellerPage from './components/SellerPage'
 import ProductView from './components/ProductView'
 import About from './components/About'
 
-axios.defaults.baseURL = 'http://localhost:8000'
+axios.defaults.baseURL = 'https://upaj.onrender.com'
 axios.defaults.withCredentials = true
 
 function App() {

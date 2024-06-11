@@ -22,7 +22,7 @@ const ProductDetails = () => {
   }, [productId]);
 
   const getImageUrl = (imageUrl) => {
-    return `http://localhost:8000/${imageUrl}`;
+    return `https://upaj.onrender.com/${imageUrl}`;
   };
 
   if (error) {
