@@ -28,7 +28,7 @@ const MarketplaceDetails = () => {
   return (
     <div
       style={{
-        backgroundImage: `url('../bg.jpg')`,
+        background: `linear-gradient( to bottom, rgba(0, 0, 0, 0.4) 0%,rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1.0) 100%), url(/Subsidiesbg.jpg)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
