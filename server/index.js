@@ -15,6 +15,11 @@ mongoose.connect(db).then(() => {
     }
 );
 
+app.use(cors({
+  origin: 'https://upaj.vercel.app',
+  credentials: true
+}));
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
