@@ -16,7 +16,7 @@ mongoose.connect(db).then(() => {
 );
 
 app.use(cors({
-  origin: 'https://upaj.vercel.app',
+  origin: true,
   credentials: true
 }));
 
